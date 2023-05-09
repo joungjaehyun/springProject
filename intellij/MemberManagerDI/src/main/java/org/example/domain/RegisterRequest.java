@@ -42,7 +42,7 @@ public class RegisterRequest {
     }
 
     // 비밀번호 = 확인비밀번호 일치여부 확인
-    public boolean isConfirmPassword(){
+    public boolean isConfirmPassword() {
         return this.password.equals(this.confirmPassword);
     }
 }
