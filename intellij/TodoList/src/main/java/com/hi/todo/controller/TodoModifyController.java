@@ -36,12 +36,13 @@ public class TodoModifyController {
 
         //return "todo/modify";
 
-        return "redirect:/todo/list";
+         return "redirect:/todo/list";
     }
 
     @ModelAttribute("strData")
     public String getData(){
         return "hello Spring!!!";
     }
+
 
 }
