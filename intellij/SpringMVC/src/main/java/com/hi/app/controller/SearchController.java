@@ -17,7 +17,8 @@ import java.util.List;
 public class SearchController {
 
         @RequestMapping("/search/search1")
-        public String search1(Model model, String keyword,
+        public String search1(Model model,
+                              String keyword,
                               @RequestParam(value = "tno", required = false) String tno,
                               @RequestParam(value = "page",defaultValue = "1") int page,
                               HttpServletRequest request,
