@@ -35,7 +35,7 @@
             <td>${dept.loc}</td>
             <td>
                 <a href="/dept/modify?no=${dept.deptno}">수정</a>
-                <a href="/deot/delete">삭제</a>
+                <a href="/dept/delete?no=${dept.deptno}">삭제</a>
             </td>
         </tr>
         </c:forEach>

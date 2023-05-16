@@ -16,10 +16,25 @@
 <hr>
 
 <form method="post">
-  
+    <table>
+        <tr>
+            <td>부서 번호</td>
+            <td><input type="number" name="deptno" value="${dept.deptno}" readonly></td>
+        </tr>
+        <tr>
+            <td>부서 이름</td>
+            <td><input type="text" name="dname" value="${dept.dname}" required></td>
+        </tr>
+        <tr>
+            <td>부서 지역</td>
+            <td><input type="text" name="loc" value="${dept.loc}" required></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>  <input type="submit" value="Modify"></td>
+        </tr>
+    </table>
 
-
-  <input type="submit" value="Modify">
 </form>
 
 </body>
