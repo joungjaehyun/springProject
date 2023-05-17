@@ -14,11 +14,31 @@
         td{
             padding: 10px;
         }
+        .searchBox {
+            border: 1px solid #ddd;
+            width: 400px;
+            padding: 15px;
+            margin: 15px;
+        }
     </style>
 </head>
 <body>
     <h1>부서 리스트</h1>
     <hr>
+
+    <div class="searchBox">
+        <form>
+            검색
+            <select name="searchType">
+                <option value="dname">부서이름</option>
+                <option value="loc">부서위치</option>
+            </select>
+            <input type="text" name="keyword">
+            <input type="submit" value="Search">
+        </form>
+
+    </div>
+
 
     <table border="1">
         <tr>
