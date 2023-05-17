@@ -40,6 +40,7 @@ public class DeptListController {
                 deptSearchOption.getKeyword() != null && deptSearchOption.getKeyword().trim().length()>0 ? deptSearchOption.getKeyword() : null);
         deptSearchOption.setSearchType(deptSearchOption.getKeyword() != null && deptSearchOption.getKeyword().trim().length()>0 ? deptSearchOption.getSearchType() : null);
         log.info(">>>>>>>>>> deptSearchOption" + deptSearchOption);
-        model.addAttribute("list",listService.getList());
+        //model.addAttribute("list",listService.getList());
+        model.addAttribute("list",listService.getListSearchList(searchOption));
     }
 }

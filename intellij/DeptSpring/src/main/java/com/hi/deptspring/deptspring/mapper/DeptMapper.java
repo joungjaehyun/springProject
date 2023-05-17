@@ -18,6 +18,8 @@ public interface DeptMapper {
     // deptno 컬럼으로 검색 => DeptDTO
     DeptDTO selectByDeptno(int deptno);
 
+    List<DeptDTO> selectByDeptnos(List<Integer> deptnos);
+
     // 검색어로 검색 결과를 반환
     List<DeptDTO> selectByOption(DeptSearchOption option);
 

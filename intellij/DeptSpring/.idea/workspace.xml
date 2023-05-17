@@ -5,7 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9ce0f13a-2079-4e7b-a3bb-54e0ad4caa0c" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../../dept-Mybatis.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../dept-Mybatis.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hi/deptspring/deptspring/controller/DeptListController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hi/deptspring/deptspring/controller/DeptListController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hi/deptspring/deptspring/mapper/DeptMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hi/deptspring/deptspring/mapper/DeptMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hi/deptspring/deptspring/service/DeptListService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hi/deptspring/deptspring/service/DeptListService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/mappers/DeptMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mappers/DeptMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/dept/list.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/dept/list.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/hi/deptspring/ConnectionTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/hi/deptspring/ConnectionTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,31 +77,7 @@
       <recent name="com.hi.deptspring.deptspring.mapper" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.ConnectionTest.searchDeptTest">
-    <configuration name="ConnectionTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;com.hi.deptspring.ConnectionTest&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <ForceTestExec>true</ForceTestExec>
-      <method v="2" />
-    </configuration>
+  <component name="RunManager" selected="Gradle.ConnectionTest.selectByDeptnosTest">
     <configuration name="ConnectionTest.deptInsertTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -181,6 +164,30 @@
             <option value=":test" />
             <option value="--tests" />
             <option value="&quot;com.hi.deptspring.ConnectionTest.searchDeptTest&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <ForceTestExec>true</ForceTestExec>
+      <method v="2" />
+    </configuration>
+    <configuration name="ConnectionTest.selectByDeptnosTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;com.hi.deptspring.ConnectionTest.selectByDeptnosTest&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -282,18 +289,18 @@
     <list>
       <item itemvalue="Gradle.ConnectionTest.deptInsertTest" />
       <item itemvalue="Gradle.ConnectionTest.searchDeptTest" />
-      <item itemvalue="Gradle.ConnectionTest" />
+      <item itemvalue="Gradle.ConnectionTest.selectByDeptnosTest" />
       <item itemvalue="Gradle.ConnectionTest.getDeptListTest" />
       <item itemvalue="Gradle.ConnectionTest.getTimeMapperTest" />
       <item itemvalue="Tomcat Server.Tomcat 9.0.74" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.ConnectionTest.selectByDeptnosTest" />
         <item itemvalue="Gradle.ConnectionTest.searchDeptTest" />
         <item itemvalue="Gradle.ConnectionTest.deptInsertTest" />
         <item itemvalue="Gradle.ConnectionTest.getDeptListTest" />
         <item itemvalue="Gradle.ConnectionTest.getTimeMapperTest" />
-        <item itemvalue="Gradle.ConnectionTest" />
       </list>
     </recent_temporary>
   </component>
@@ -306,7 +313,7 @@
       <option name="presentableId" value="Default" />
       <updated>1684202460946</updated>
       <workItem from="1684202462116" duration="20847000" />
-      <workItem from="1684282278041" duration="12317000" />
+      <workItem from="1684282278041" duration="15937000" />
     </task>
     <servers />
   </component>
