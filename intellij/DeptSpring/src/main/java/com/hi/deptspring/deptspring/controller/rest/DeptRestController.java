@@ -64,39 +64,40 @@ public class DeptRestController {
 
     // post : JSON 형식의 데이터를 받아서 데이터베이스에 저장
     @PostMapping
-    public String regDept(
+    public ResponseEntity<String> regDept(
             @RequestBody DeptRegistRequest registRequest
             ){
         log.info("JSON -> DeptRegistRequest : " + registRequest);
 
-        registService.registDept(registRequest);
+        int result =registService.registDept(registRequest);
+        // String msg = ("Insert " + (result==1? "OK":"FAIL");
         // JSON 데이터를 JAVA 객체로 받는다.
-        return "Insert OK!";
+        return new ResponseEntity<>("Insert " + (result==1? "OK":"FAIL"),HttpStatus.OK);
     }
 
     // put /{no} : 하나의 부서 정보를 수정, 전체 데이터를 수정
     @PutMapping("/{no}")
-    public String edit(
+    public ResponseEntity<String> edit(
             @PathVariable("no") int deptno,
             @RequestBody DeptDTO dept
     ){
 
         log.info("JSON -> DeptDTO : " + dept);
         dept.setDeptno(deptno);
-        modifyService.modifyService(dept);
-
-        return "Update";
+       int result = modifyService.modifyService(dept);
+       //String msg= "Update " +(result==1? "OK":"FAIL");
+        return new ResponseEntity<>("Update " +(result==1? "OK":"FAIL"),HttpStatus.OK);
     }
 
     // delete /{no} : 부서 정보 하나를 삭제
     @DeleteMapping("/{no}")
-    public String delete(
+    public ResponseEntity<String>delete(
             @PathVariable("no") int deptno
     ){
         log.info("delete... " + deptno);
 
-        deleteService.deleteDept(deptno);
-
-        return "Delete";
+        int result = deleteService.deleteDept(deptno);
+        // String msg = "Delete " +(result==1? "OK":"FAIL");
+        return new ResponseEntity<>("Delete " +(result==1? "OK":"FAIL"),HttpStatus.OK);
     }
 }
