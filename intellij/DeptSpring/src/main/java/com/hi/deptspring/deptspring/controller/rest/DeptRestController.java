@@ -5,10 +5,7 @@ import com.hi.deptspring.deptspring.service.DeptListService;
 import com.hi.deptspring.deptspring.service.DeptReadService;
 import com.hi.deptspring.deptspring.service.DeptRegistService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -42,5 +39,11 @@ public class DeptRestController {
             @PathVariable("no")int deptno
     ){
         return readService.getDept(deptno);
+    }
+
+    @PostMapping
+    public String regDept(){
+
+        return "insert OK!";
     }
 }
