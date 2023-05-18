@@ -2,8 +2,11 @@ package com.hi.deptspring.deptspring.controller.rest;
 
 import com.hi.deptspring.deptspring.domain.DeptDTO;
 import com.hi.deptspring.deptspring.service.DeptListService;
+import com.hi.deptspring.deptspring.service.DeptReadService;
+import com.hi.deptspring.deptspring.service.DeptRegistService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -23,11 +26,21 @@ public class DeptRestController {
 
     @Autowired
     private DeptListService listService;
+    @Autowired
+    private DeptReadService readService;
 
     @GetMapping // /api/v1/depts
     public List<DeptDTO> getDeptList(){
 
-    
+
         return listService.getList();
+    }
+
+    @GetMapping("/{no}")
+
+    public DeptDTO getDept(
+            @PathVariable("no")int deptno
+    ){
+        return readService.getDept(deptno);
     }
 }
