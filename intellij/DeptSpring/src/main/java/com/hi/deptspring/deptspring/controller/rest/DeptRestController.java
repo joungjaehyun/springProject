@@ -27,6 +27,7 @@ public class DeptRestController {
     @GetMapping // /api/v1/depts
     public List<DeptDTO> getDeptList(){
 
+    
         return listService.getList();
     }
 }
