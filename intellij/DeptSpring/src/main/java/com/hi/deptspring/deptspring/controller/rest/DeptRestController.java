@@ -1,6 +1,7 @@
 package com.hi.deptspring.deptspring.controller.rest;
 
 import com.hi.deptspring.deptspring.domain.DeptDTO;
+import com.hi.deptspring.deptspring.domain.DeptRegistRequest;
 import com.hi.deptspring.deptspring.service.DeptListService;
 import com.hi.deptspring.deptspring.service.DeptReadService;
 import com.hi.deptspring.deptspring.service.DeptRegistService;
@@ -28,6 +29,9 @@ public class DeptRestController {
     @Autowired
     private DeptReadService readService;
 
+    @Autowired
+    private  DeptRegistService registService;
+
     @GetMapping // /api/v1/depts
     public List<DeptDTO> getDeptList(){
 
@@ -45,10 +49,11 @@ public class DeptRestController {
 
     @PostMapping
     public String regDept(
-            @RequestBody DeptDTO dto
-    ){
-        log.info("JSON -> DeptDTO : " + dto);
+            @RequestBody DeptRegistRequest registRequest
+            ){
+        log.info("JSON -> DeptDTO : " + registRequest);
 
+        registService.registDept(registRequest);
         // JSON 데이터를 JAVA 객체로 받는다.
         return "insert OK!";
     }
