@@ -4,6 +4,7 @@ import com.hi.deptspring.deptspring.domain.DeptDTO;
 import com.hi.deptspring.deptspring.service.DeptListService;
 import com.hi.deptspring.deptspring.service.DeptReadService;
 import com.hi.deptspring.deptspring.service.DeptRegistService;
+import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -12,6 +13,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/v1/depts")
+@Log4j2
 public class DeptRestController {
 
 
@@ -42,8 +44,12 @@ public class DeptRestController {
     }
 
     @PostMapping
-    public String regDept(){
+    public String regDept(
+            @RequestBody DeptDTO dto
+    ){
+        log.info("JSON -> DeptDTO : " + dto);
 
+        // JSON 데이터를 JAVA 객체로 받는다.
         return "insert OK!";
     }
 }
