@@ -2,11 +2,12 @@ package com.hi.deptspring.deptspring.controller.rest;
 
 import com.hi.deptspring.deptspring.domain.DeptDTO;
 import com.hi.deptspring.deptspring.domain.DeptRegistRequest;
-import com.hi.deptspring.deptspring.service.DeptListService;
-import com.hi.deptspring.deptspring.service.DeptReadService;
-import com.hi.deptspring.deptspring.service.DeptRegistService;
+import com.hi.deptspring.deptspring.service.*;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
@@ -17,44 +18,85 @@ import java.util.List;
 @Log4j2
 public class DeptRestController {
 
-
-    // get : 전체 리스트
-    // get /{no} : 부서 하나의 정보
-    // post : JSON 형식의 데이터를 받아서 데이터베이스에 저장
-    // put /{no} : 하나의 부서 정보를 수정, 전체 데이터를 수정
-    // delete /{no} : 부서 정보 하나를 삭제
-
     @Autowired
     private DeptListService listService;
     @Autowired
     private DeptReadService readService;
-
     @Autowired
     private  DeptRegistService registService;
+    @Autowired
+    private DeptModifyService modifyService;
+    @Autowired
+    private DeptDeleteService deleteService;
 
+    // get : 전체 리스트
     @GetMapping // /api/v1/depts
-    public List<DeptDTO> getDeptList(){
+    public ResponseEntity <List<DeptDTO>> getDeptList(){
 
+        // ResponseEntity<T> => 응답 데이터를 제네릭으로 정의
+        // body(응답 데이터), httpHeader, statusCode
+        // new ResponseEntity<> (응답데이터, httpHeader, statusCode)
+        // new ResponseEntity<> (응답데이터, statusCode)
 
-        return listService.getList();
+        // Header 정의 => HttpHeaders
+        HttpHeaders httpHeaders = new HttpHeaders();
+        httpHeaders.set("some-header","some-value");
+
+        ResponseEntity <List<DeptDTO>> entity =
+                new ResponseEntity<>(
+                        listService.getList(),
+                        httpHeaders,
+                        HttpStatus.NOT_FOUND);
+
+        return entity;
     }
 
+    // get /{no} : 부서 하나의 정보
     @GetMapping("/{no}")
 
-    public DeptDTO getDept(
+    public ResponseEntity<DeptDTO> getDept(
             @PathVariable("no")int deptno
     ){
-        return readService.getDept(deptno);
+        //return readService.getDept(deptno);
+
+        return new ResponseEntity<>(readService.getDept(deptno),HttpStatus.OK);
     }
 
+    // post : JSON 형식의 데이터를 받아서 데이터베이스에 저장
     @PostMapping
     public String regDept(
             @RequestBody DeptRegistRequest registRequest
             ){
-        log.info("JSON -> DeptDTO : " + registRequest);
+        log.info("JSON -> DeptRegistRequest : " + registRequest);
 
         registService.registDept(registRequest);
         // JSON 데이터를 JAVA 객체로 받는다.
-        return "insert OK!";
+        return "Insert OK!";
+    }
+
+    // put /{no} : 하나의 부서 정보를 수정, 전체 데이터를 수정
+    @PutMapping("/{no}")
+    public String edit(
+            @PathVariable("no") int deptno,
+            @RequestBody DeptDTO dept
+    ){
+
+        log.info("JSON -> DeptDTO : " + dept);
+        dept.setDeptno(deptno);
+        modifyService.modifyService(dept);
+
+        return "Update";
+    }
+
+    // delete /{no} : 부서 정보 하나를 삭제
+    @DeleteMapping("/{no}")
+    public String delete(
+            @PathVariable("no") int deptno
+    ){
+        log.info("delete... " + deptno);
+
+        deleteService.deleteDept(deptno);
+
+        return "Delete";
     }
 }
