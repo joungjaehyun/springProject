@@ -12,6 +12,7 @@ public interface BoardMapper {
 
     List<BoardDTO> selectAll();
 
+    BoardDTO selectByBno(int bno);
 
     int insertBoard(RequestRegBoard regBoard);
 
