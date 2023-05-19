@@ -28,4 +28,14 @@
 
     </insert>
 
+    <update id="updateBoard"
+            parameterType="com.hi.board.domain.RequestModifyRequest">
+        update tbl_board set title=#{title}, content=#{content}, writer=#{writer}, file =#{fileName} where bno=#{bno};
+
+    </update>
+
+    <delete id="deleteBoard">
+        delete from tbl_board where bno = #{bno}
+    </delete>
+
 </mapper>
