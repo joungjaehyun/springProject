@@ -8,8 +8,9 @@
 		http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
 
     <mvc:annotation-driven></mvc:annotation-driven>
-
     <context:component-scan base-package="com.hi.board.controller"/>
+
+    <mvc:resources mapping="/uploadfile/**" location="/uploadfile/"/>
 
     <!-- view 설정-->
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
@@ -18,6 +19,13 @@
     </bean>
     <!-- "/WEB-INF/views/member/loginForm.jsp"-->
     <!-- Controller에서 view 지정 "member/loginForm"-->
+
+    <!-- 파일 업로드를 위해서는 multipartResolver 등록 : 필수!!!!   -->
+    <bean id="multipartResolver"
+          class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+        <property name="defaultEncoding" value="utf-8"/>
+
+    </bean>
 
 
 </beans>

@@ -14,7 +14,7 @@
 
     <h1>Write contents</h1>
     <hr>
-      <form method="post">
+      <form method="post" enctype="multipart/form-data">
         <table>
             <tr>
                   <td>Writer</td>
@@ -29,6 +29,10 @@
                     <td>
                         <textarea name="content" cols="20" rows="5" required></textarea>
                     </td>
+            </tr>
+            <tr>
+                <td>Attach File(Image)</td>
+                <td><input type="file" name="file"> </td>
             </tr>
             <tr>
                 <td></td>
