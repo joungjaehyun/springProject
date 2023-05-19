@@ -3,6 +3,7 @@ package com.hi.board.domain;
 import javax.swing.*;
 import java.util.List;
 
+
 public class BoardListPage {
 
     // 페이지 당 출력할 게시물의 개수
@@ -31,11 +32,15 @@ public class BoardListPage {
     // 다음 버튼 출력 유무
     private boolean next;
 
-    public BoardListPage(int countPerPage, int pageNum, List<BoardDTO> list, int totalCount) {
+    public BoardListPage(int countPerPage,
+                         int pageNum,
+                         List<BoardDTO> list,
+                         int totalCount) {
         this.countPerPage = countPerPage;
         this.pageNum = pageNum;
         this.list = list;
         this.totalCount = totalCount;
+        calPageInfo();
     }
 
     private void calPageInfo(){
@@ -46,7 +51,16 @@ public class BoardListPage {
 
         // 시작 번호
         this.startNum = this.endNum - 9;
+
+        // 실제 끝 번호 : 전체 페이지의 끝번호
+        int realEndNum = (int)(Math.ceil(this.totalCount*1.0 /countPerPage));
+
+        // endNum
+        this.endNum = realEndNum < this.endNum ? realEndNum : this.endNum;
+
         // 이전 유무
-        // 다음 유무
+        this.prev = this.startNum >1;
+        // 다음 유무 : 현재 구간의 마지막 번호 < realEndNum
+        this.next = this.endNum < realEndNum;
     }
 }
