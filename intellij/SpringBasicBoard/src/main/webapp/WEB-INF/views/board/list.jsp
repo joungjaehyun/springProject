@@ -19,6 +19,19 @@
 <body>
     <h1>Board </h1>
     <hr>
+
+    <div class="searchArea">
+        <form>
+        <select name="searchType">
+            <option value="title">Title</option>
+            <option value="content">Content</option>
+            <option value="writer">Writer</option>
+        </select>
+        <input type="text" name="keyword">
+        <input type="submit" value="search">
+        </form>
+    </div>
+
     <table border="1">
         <tr>
             <th>Number</th>
@@ -26,7 +39,7 @@
             <th>Writer</th>
             <th>Post Date</th>
         </tr>
-        <c:forEach items="${list}" var="board">
+        <c:forEach items="${page.list}" var="board">
         <tr>
             <td>${board.bno}</td>
             <td><a href="/board/read?bno=${board.bno}">${board.title}</a></td>
@@ -35,6 +48,22 @@
         </tr>
         </c:forEach>
     </table>
+    <div class="paging">
+
+        <c:if test="${page.prev}">
+           <a href="/board/list?p=${page.startNum-1}&searchType=${param.searchType}&keyword=${param.keyword}">prev</a>
+        </c:if>
+
+        <c:forEach begin="${page.startNum}" end="${page.endNum}" var="num">
+          <a href="list?p=${num}&searchType=${param.searchType}&keyword=${param.keyword}"> [ ${num} ]</a>
+        </c:forEach>
+        <c:if test="${page.next}">
+         <a href="/board/list?p=${page.endNum +1}&searchType=${param.searchType}&keyword=${param.keyword}">next</a>
+        </c:if>
+
+    </div>
+
+
 
     <a href="/board/write">Write</a>
 </body>

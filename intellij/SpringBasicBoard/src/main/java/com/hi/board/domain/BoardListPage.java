@@ -1,9 +1,14 @@
 package com.hi.board.domain;
 
-import javax.swing.*;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
+
 import java.util.List;
 
-
+@Getter
+@Setter
+@ToString
 public class BoardListPage {
 
     // 페이지 당 출력할 게시물의 개수
@@ -46,10 +51,10 @@ public class BoardListPage {
     private void calPageInfo(){
         // 끝 번호
         // Math.ceil : 소수점 이하의 값을 무조건 올림
-        // /10 *10은 같은숫자 처리해 줘야됨 (몇페이지 보여줄것인가 의 기준이기 때문)
+        // /10 *10은 같은숫자 처리해 줘야됨 (몇페이지씩 보여줄것인가 의 기준이기 때문)
         this.endNum = (int)(Math.ceil(this.pageNum*1.0/10))*10;
 
-        // 시작 번호
+        // 시작 번호 (몇페이지 보여줄것인가의
         this.startNum = this.endNum - 9;
 
         // 실제 끝 번호 : 전체 페이지의 끝번호
