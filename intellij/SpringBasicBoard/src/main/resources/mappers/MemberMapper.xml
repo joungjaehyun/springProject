@@ -12,5 +12,11 @@
         insert into member (uid,pw,uname,uphoto) values (#{uid},#{pw},#{uname},#{fileName})
     </insert>
 
+    <select id="selectByUidPw"
+            resultType="com.hi.board.domain.member.MemberDTO">
+        select idx, uid, uname, uphoto
+        from member
+        where uid= #{param1} and pw= #{param2}
+    </select>
 
 </mapper>

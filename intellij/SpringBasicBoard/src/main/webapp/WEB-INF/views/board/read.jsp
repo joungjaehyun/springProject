@@ -19,7 +19,8 @@
 <body>
       <h1>Read Article</h1>
         <hr>
-
+      ${loginInfo}
+        <hr>
             <table border="1">
                 <tr>
                     <td>Board Number</td>

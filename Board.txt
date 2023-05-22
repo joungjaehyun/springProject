@@ -46,8 +46,10 @@ Controller -> service -> mapper -> controller -redirect:/board/list
  입력 받을 데이터
  uid, pw, uname, uphoto
 
-2. 로그인 : interceptor
-	 /board/** <= 세션을 확인
+2. 로그인 : 
+	/login : get | post
+	
+interceptor  /board/** <= 세션을 확인
 
 3. tbl_board => column 추가 idx 외래키
    member 테이블의 idx 참조
