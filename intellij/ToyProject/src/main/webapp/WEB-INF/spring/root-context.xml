@@ -17,7 +17,7 @@
         핵심로직 처리 (model)  bean 등록
         : Service / Dao 관련
     -->
-    <context:component-scan base-package="com.hi.board.service"/>
+    <context:component-scan base-package="com.jahyun.app.service"/>
 
 
 
