@@ -5,6 +5,8 @@ SELECT * FROM project.tbl_board order by bno desc limit 15,5; -- 4page (4-1)*5 =
 
 select count(*) from tbl_board;
 
+select * from tbl_board;
+
 -- tbl_board SQL
 
 -- select
