@@ -5,13 +5,20 @@ SELECT * FROM project.tbl_board order by bno desc limit 15,5; -- 4page (4-1)*5 =
 
 select count(*) from tbl_board;
 
-select * from tbl_board;
+
 
 -- tbl_board SQL
 
 -- select
 
+select * from tbl_board;
+
 -- select * from tbl_board;
+
+select bno, title, content, file, uname as writer, memidx 
+from tbl_board b, member m
+where b.memidx = m.idx;
+
 
 -- insert
 -- insert into tbl_board (title, content, writer) values (#{},#{},#{})
