@@ -33,6 +33,5 @@ public class BoardWriterController {
 
         writeService.writeBoard(board, request);
         return "redirect:/board/list";
-
     }
 }

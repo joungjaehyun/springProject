@@ -35,10 +35,7 @@
                     <td>Content</td>
                     <td><textarea name="content" rows="4" cols="20">${board.content}</textarea></td>
                 </tr>
-                <tr>
-                    <td>Writer</td>
-                    <td><input type="text" name="writer" value="${board.writer}"></td>
-                </tr>
+
                 <tr>
                     <td>Attached File(Image)</td>
                     <td>

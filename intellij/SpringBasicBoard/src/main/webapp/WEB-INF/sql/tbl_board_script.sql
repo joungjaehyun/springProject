@@ -15,11 +15,12 @@ select * from tbl_board;
 
 -- insert
 -- insert into tbl_board (title, content, writer) values (#{},#{},#{})
-insert into tbl_board (title,content, writer) values('게시글 테스트','게시글 쓰기 테스트1', '테스터');
+-- insert into tbl_board (title,content, writer) values('게시글 테스트','게시글 쓰기 테스트1', '테스터');
 
+-- insert into tbl_board (title, content, memidx) values ('게시글 테스트1', '글쓰기 테스트1',1);
+-- insert into tbl_board (title, content, memidx) values (#{},#{},#{});
 
-
-
+-- insert into tbl_board (title, content, memidx) values ('게시글 테스트1', '글쓰기 테스트1',1);
 
 
 
@@ -28,3 +29,4 @@ insert into tbl_board (title,content, writer) values('게시글 테스트','게�
 -- update tbl_board set title=#{}, content=#{}, writer=#{}, file =#{} where bno=#{};
 
 -- delete
+-- delete from tbl_board where bno = #{}

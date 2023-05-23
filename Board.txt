@@ -53,10 +53,22 @@ interceptor  /board/** <= 세션을 확인
 
 3. tbl_board => column 추가 idx 외래키
    member 테이블의 idx 참조
+DATA 다삭제후 idx 값을 추가후 forigen key 설정
 
 4. 게시물 작성 시 idx 에는 로그인 한 사용자의 idx 값을 입력
+
+- form 전달되는 파라미터
+- 커맨드 객체 수정
+- mapper xml insert tag 변경
+- 글작성 테스트
 
 5. 게시물의 리스트 => tbl_board 와 member 테이블 Join
 
 6. 상세보기 페이지 => 작성자 idx와 로그인한 사용자의 idx 비교
     		=> 수정, 삭제
+
+7. 수정 페이지
+- form 수정 : writer 부분 삭제
+- 커맨드 객체 변수 삭제
+- mapper xml  - < writer 부분 삭제
+- 테스트

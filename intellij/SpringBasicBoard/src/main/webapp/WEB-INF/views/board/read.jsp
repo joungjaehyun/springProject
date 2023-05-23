@@ -55,7 +55,11 @@
                 </tr>
             </table>
       <a href="/board/list">LIST</a>
+
+
+      <c:if test="${loginInfo.idx eq article.memidx}">
       <a href="/board/modify?bno=${article.bno}">Modify</a>
       <a href="/board/delete?bno=${article.bno}">Delete</a>
+      </c:if>
 </body>
 </html>
